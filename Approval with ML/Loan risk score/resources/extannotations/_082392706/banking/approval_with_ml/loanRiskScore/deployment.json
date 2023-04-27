@@ -1,0 +1,10 @@
+{
+  "name" : "SGDClassifier",
+  "id" : "7",
+  "deployedAt" : "2021-12-03T09:58:08.617029Z",
+  "status" : "in_service",
+  "metadata" : {
+    "description" : null,
+    "tags" : [ "ADS_TAG/082392706/Banking" ]
+  }
+}

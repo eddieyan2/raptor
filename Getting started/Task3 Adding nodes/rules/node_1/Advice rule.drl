@@ -7,5 +7,5 @@
   <definition><![CDATA[if
     Name is defined
 then
-    set decision to "Hello " + Name  + "! " + 'Weather advice';]]></definition>
+    set decision to "Hello " + Name  + "! " + 'Flood Advice' + ". " + 'Weather advice' ;]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

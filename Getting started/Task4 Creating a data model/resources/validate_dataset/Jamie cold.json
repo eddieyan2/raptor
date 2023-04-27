@@ -1,7 +1,8 @@
 {
-  "name" : "Jamie",
-  "weather" : {
-    "temperature" : "cold",
-    "rainForecast" : 0
+  "name": "Jamie",
+  "weather": {
+    "temperature": "cold",
+    "rainForecast": 5,
+    "stormAlert": true
   }
 }

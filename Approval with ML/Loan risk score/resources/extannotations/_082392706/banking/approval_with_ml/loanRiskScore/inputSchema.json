@@ -1,0 +1,36 @@
+{
+  "id" : "input_id",
+  "name" : "input for SGDClassifier",
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "creditScore",
+    "type" : "double",
+    "nullable" : false,
+    "jsonName" : "creditScore"
+  }, {
+    "name" : "income",
+    "type" : "double",
+    "nullable" : false,
+    "jsonName" : "income"
+  }, {
+    "name" : "loanAmount",
+    "type" : "double",
+    "nullable" : false,
+    "jsonName" : "loanAmount"
+  }, {
+    "name" : "monthDuration",
+    "type" : "double",
+    "nullable" : false,
+    "jsonName" : "monthDuration"
+  }, {
+    "name" : "rate",
+    "type" : "double",
+    "nullable" : false,
+    "jsonName" : "rate"
+  }, {
+    "name" : "yearlyReimbursement",
+    "type" : "double",
+    "nullable" : false,
+    "jsonName" : "yearlyReimbursement"
+  } ]
+}

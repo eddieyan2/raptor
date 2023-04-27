@@ -1,6 +1,7 @@
 
 # Temperature
 Temperature#concept.label = temperature
+Temperature.cold#instance.documentation = 
 Temperature.cold#instance.label = cold
 Temperature.hot#instance.label = hot
 Temperature.warm#instance.label = warm

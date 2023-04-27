@@ -14,7 +14,7 @@
                 <output bomType="java.lang.String" collection="false" name="Name"/>
             </initialization>
         </extensionElements>
-        <variable id="name_ii" name="Name" typeRef="java.lang.String"/>
+        <variable id="node_0_ii" name="Name" typeRef="java.lang.String"/>
     </inputData>
     <decision id="node_1" name="Daily advice">
         <description>Daily advice built from the provided input.</description>
@@ -22,17 +22,21 @@
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="java.lang.String" collection="false" name="Name"/>
                 <input bomType="java.lang.String" collection="false" name="Weather advice"/>
+                <input bomType="java.lang.String" collection="false" name="Flood Advice"/>
                 <output bomType="java.lang.String" collection="false" name="Daily advice"/>
                 <rule defaultRule="false" href="node_1/Advice%20rule.drl" kind="BusinessRule" name="Advice rule"/>
                 <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
-        <variable id="dailyAdvice_ii" name="Daily advice" typeRef="java.lang.String"/>
+        <variable id="node_1_ii" name="Daily advice" typeRef="java.lang.String"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>
         <informationRequirement>
             <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
         </informationRequirement>
     </decision>
     <inputData id="node_2" name="Rain forecast">
@@ -43,7 +47,7 @@
                 <output bomType="java.lang.Long" collection="false" name="Rain forecast"/>
             </initialization>
         </extensionElements>
-        <variable id="rainForecast_ii" name="Rain forecast" typeRef="java.lang.Long"/>
+        <variable id="node_2_ii" name="Rain forecast" typeRef="java.lang.Long"/>
     </inputData>
     <decision id="node_3" name="Weather advice">
         <description>Build an advice based on the weather features.
@@ -55,7 +59,20 @@
                 <rule defaultRule="false" href="node_3/weather%20table.dmt" kind="DecisionTable" name="weather table"/>
             </ruleset>
         </extensionElements>
-        <variable id="weatherAdvice_ii" name="Weather advice" typeRef="java.lang.String"/>
+        <variable id="node_3_ii" name="Weather advice" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Flood Advice">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Long" collection="false" name="Rain forecast"/>
+                <output bomType="java.lang.String" collection="false" name="Flood Advice"/>
+                <rule defaultRule="false" href="node_4/Flood%20Table.dmt" kind="DecisionTable" name="Flood Table"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Flood Advice" typeRef="java.lang.String"/>
         <informationRequirement>
             <requiredInput href="#node_2"/>
         </informationRequirement>
